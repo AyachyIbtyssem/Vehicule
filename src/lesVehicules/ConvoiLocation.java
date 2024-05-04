@@ -1,43 +1,40 @@
 package lesVehicules;
 import java.util.List;
-import java.util.ArrayList;
+
+
 public class ConvoiLocation {
-	private List<Vehicule> listeDesVehiculesLouees;
+	private List<VehiculeLouable> listeDesVehiculeLouable;
 	
-	public ConvoiLocation(List<Vehicule> listeDesVehiculesLouees) {
-		this.listeDesVehiculesLouees=listeDesVehiculesLouees;
+	public ConvoiLocation(List<VehiculeLouable> listeDesVehiculeLouable) {
+		this.listeDesVehiculeLouable=listeDesVehiculeLouable;
 	}
 	
-	public List<Vehicule> getListeDesVehiculesLouees() {
-		return this.listeDesVehiculesLouees;
+	public List<VehiculeLouable> getListeDesVehiculeLouable() {
+		return this.listeDesVehiculeLouable;
 	}
 	
-	public void ajouterVehicuALouer(Vehicule vehicuALouer) {
-		listeDesVehiculesLouees.add(vehicuALouer);
+	public void ajouterVehicuALouer(VehiculeLouable vehiculeLouable) {
+		listeDesVehiculeLouable.add(vehiculeLouable);
 	}
 	
 	public double calculerCoutLocation(int d) {
 		double coutTotal=0;
-		for(Vehicule vehicule:listeDesVehiculesLouees) {
+		for(VehiculeLouable vehicule:listeDesVehiculeLouable) {
 			coutTotal+=vehicule.facturer(d);
 		}
 		return coutTotal;
 	}
 
-	public Vehicule getVéhiculePlusLent(List<Vehicule> listeDesVehiculesLouees) {
-		List<Integer> listeDesVitessesMax = new ArrayList<Integer>();
-		for(Vehicule vehicule : listeDesVehiculesLouees) {
-			listeDesVitessesMax.add(vehicule.calculerVitesseMaximale());
-		}
-		int minIndex=0;
-		int min=listeDesVitessesMax.get(0);
-		for(int i=1;i<listeDesVitessesMax.size();i++) {
-			if(listeDesVitessesMax.get(i)<min) {
-				min=listeDesVitessesMax.get(i);
-				minIndex=i;
-			}
-		}
-		return listeDesVehiculesLouees.get(minIndex);
+	public String getVehiculePlusLent() {
+		VehiculeLouable vehiculePlusLent = null;
+	    int vitesseMinimale = listeDesVehiculeLouable.get(0).getVitesseMoyenne();
+	    for (VehiculeLouable vehicule : listeDesVehiculeLouable) {
+	    	if (vehicule.getVitesseMoyenne() < vitesseMinimale) {
+	    		vehiculePlusLent = vehicule;
+	            vitesseMinimale = vehiculePlusLent.getVitesseMoyenne();
+	        }
+	    }
+	    return vehiculePlusLent.getImmatriculation();
 	}
 
 }

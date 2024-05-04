@@ -1,28 +1,37 @@
 package lesVehicules;
 
+import java.util.Scanner;
+
 public class CamionBaches extends Vehicule{
-	private int chargeMax=20;
-	private int chargeActuelle;
-	public CamionBaches(String immatriculation,int poidsAvide,int nombrePlaces) {
-		super(immatriculation,4,nombrePlaces);
-		//la charge actuelle initialisee par la valeur de poids a vide
-		this.chargeActuelle=4; 
+	
+	private final int chargeMax=20;
+	
+	public CamionBaches(String immatriculation) {
+		super(immatriculation,4);
 	}
+	
 	public int getChargeMax() {
 		return this.chargeMax;
 	}
+	
 	public void charger(int poids) {
-		if(chargeActuelle+poids<this.chargeMax) {
-			chargeActuelle+=poids;
-		}
-		else 
-			System.out.println("on ne peut pas charger");
+		if(poids <= chargeMax) 
+			  System.out.println("Le camion bâché est chargé avec succès.");
+    	else 
+    		System.out.println("Impossible de charger le camion bâché. Le poids dépasse la charge maximale autorisée.");
 	}
+	
+	Scanner input= new Scanner(System.in);
 	public int calculerVitesseMaximale() {
-		if(this.chargeActuelle<=7)
-			return 110;
+		int charge=input.nextInt();
+		if(charge<=chargeMax) {
+			if(charge<=3)
+				return 110;
+			else
+				return 80;
+		}
 		else
-			return 80;
+			return -1;
 	}
 
 }
