@@ -1,7 +1,7 @@
 package lesVehicules;
 
 public abstract class Vehicule {
-	private String immatriculation;
+	private final String immatriculation;
 	private int poidsAvide;
 	
 	
@@ -17,11 +17,5 @@ public abstract class Vehicule {
 		return this.poidsAvide;
 	}
 	
-	
-	
 	public abstract int calculerVitesseMaximale();
-	
-
-
-
 }

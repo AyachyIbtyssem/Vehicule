@@ -25,6 +25,13 @@ public class PetitsBus extends Vehicule implements VehiculeLouable{
 	}
     
 
+	public int getVitesseMoyenne() {
+		return this.vitesseMoyenne;
+	}
+	public void setVitesseMoyenne(int vitesseMoyenne) {
+		this.vitesseMoyenne=vitesseMoyenne;
+	}
+
 	public int getNombrePlaces() {
 		return this.nombrePlaces;
 	}
@@ -37,12 +44,6 @@ public class PetitsBus extends Vehicule implements VehiculeLouable{
 		return dureeTrajet * 200;
 	}
 	
-	public int getVitesseMoyenne() {
-		return this.vitesseMoyenne;
-	}
-	public void setVitesseMoyenne(int vitesseMoyenne) {
-		this.vitesseMoyenne=vitesseMoyenne;
-	}
 
 
 
