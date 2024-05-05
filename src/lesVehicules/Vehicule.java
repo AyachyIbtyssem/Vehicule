@@ -4,7 +4,6 @@ public abstract class Vehicule {
 	private final String immatriculation;
 	private final int poidsAvide;
 	
-	
 	public Vehicule(String immatriculation,int poidsAvide) {
 		this.immatriculation=immatriculation;
 		this.poidsAvide=poidsAvide;

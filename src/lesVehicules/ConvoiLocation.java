@@ -21,16 +21,16 @@ public class ConvoiLocation {
 		return coutTotal;
 	}
 
-	public String getVehiculePlusLent() {
-		VehiculeLouable vehiculePlusLent = null;
-	    int vitesseMinimale = listeVehiculesLouable.get(0).getVitesseMoyenne();
+	public VehiculeLouable getVehiculePlusLent() {
+		VehiculeLouable vehiculePlusLent = listeVehiculesLouable.get(0);
+	    int vitesseMax = vehiculePlusLent.calculerVitesseMaximale();
 	    for (VehiculeLouable vehicule : listeVehiculesLouable) {
-	    	if (vehicule.getVitesseMoyenne() < vitesseMinimale) {
+	    	if (vehicule.calculerVitesseMaximale() < vitesseMax) {
 	    		vehiculePlusLent = vehicule;
-	            vitesseMinimale = vehiculePlusLent.getVitesseMoyenne();
+	            vitesseMax = vehiculePlusLent.calculerVitesseMaximale();
 	        }
 	    }
-	    return vehiculePlusLent.getImmatriculation();
+	    return vehiculePlusLent;
 	}
 
 }
