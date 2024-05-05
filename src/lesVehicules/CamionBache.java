@@ -2,9 +2,9 @@ package lesVehicules;
 
 import java.util.Scanner;
 
-public class CamionBaches extends VehiculeCharge{
+public class CamionBache extends VehiculeCharge{
 	
-	public CamionBaches(String immatriculation) {
+	public CamionBache(String immatriculation) {
 		super(immatriculation,4,20);
 	}
 

@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		CamionBaches cb1=new CamionBaches("146 tunisie 2345");
+		CamionBache cb1=new CamionBache("146 tunisie 2345");
 		PetitsBus pb1=new PetitsBus("150 tunisie 6790",10);
 		PetitsBus pb2=new PetitsBus("170 tunisie 7390",16);
 		PetitsBus pb3=new PetitsBus("180 tunisie 2391",9);

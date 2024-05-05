@@ -1,11 +1,11 @@
 package lesVehicules;
 import java.util.Scanner;
 
-public class CamionCiternes extends VehiculeCharge{
+public class CamionCiterne extends VehiculeCharge{
 
 	Scanner input= new Scanner(System.in);
 	
-	public CamionCiternes(String immatriculation) {
+	public CamionCiterne(String immatriculation) {
 		super(immatriculation,3,10);
 	}
 

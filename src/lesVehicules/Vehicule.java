@@ -2,7 +2,7 @@ package lesVehicules;
 
 public abstract class Vehicule {
 	private final String immatriculation;
-	private int poidsAvide;
+	private final int poidsAvide;
 	
 	
 	public Vehicule(String immatriculation,int poidsAvide) {

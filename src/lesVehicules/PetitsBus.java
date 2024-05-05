@@ -3,7 +3,6 @@ package lesVehicules;
 import java.util.Scanner;
 
 public class PetitsBus extends Vehicule implements VehiculeLouable{
-	private final int vitesseMaximale = 150;
 	private int vitesseMoyenne;
 	private int nombrePlaces;
 	Scanner input= new Scanner(System.in);
@@ -16,10 +15,10 @@ public class PetitsBus extends Vehicule implements VehiculeLouable{
             
             if (vitesseMoyenne <= 0) {
                 System.out.println("La vitesse doit être supérieure à zéro.");
-            } else if (vitesseMoyenne > vitesseMaximale) {
-                System.out.println("La vitesse est trop élevée. La vitesse maximale est " + vitesseMaximale + ".");
+            } else if (vitesseMoyenne > calculerVitesseMaximale() ) {
+                System.out.println("La vitesse est trop élevée. La vitesse maximale est " + calculerVitesseMaximale()  + ".");
             }
-        } while (vitesseMoyenne <= 0 || vitesseMoyenne > vitesseMaximale);
+        } while (vitesseMoyenne <= 0 || vitesseMoyenne > calculerVitesseMaximale() );
 
         System.out.println("Vitesse moyenne: " + vitesseMoyenne);
 	}
@@ -36,7 +35,7 @@ public class PetitsBus extends Vehicule implements VehiculeLouable{
 		return this.nombrePlaces;
 	}
 	public int calculerVitesseMaximale() {
-		return vitesseMaximale;
+		return 150;
 	}
 	
 	public double facturer(int d) {
