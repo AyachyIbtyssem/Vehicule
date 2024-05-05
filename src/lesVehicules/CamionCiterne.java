@@ -2,8 +2,6 @@ package lesVehicules;
 import java.util.Scanner;
 
 public class CamionCiterne extends VehiculeCharge{
-
-	Scanner input= new Scanner(System.in);
 	
 	public CamionCiterne(String immatriculation) {
 		super(immatriculation,3,10);
@@ -15,7 +13,8 @@ public class CamionCiterne extends VehiculeCharge{
     	else 
     		System.out.println("Impossible de charger le camion bâché. Le poids dépasse la charge maximale autorisée.");
 	}
-	 
+	
+	Scanner input= new Scanner(System.in);
 	public int calculerVitesseMaximale() {
 		int charge=input.nextInt();
 		if(charge<getChargeMax()) {
